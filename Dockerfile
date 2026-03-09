@@ -14,13 +14,13 @@ RUN git config --global user.name "LLVM MinGW" && \
 
 WORKDIR /build
 
-ENV TOOLCHAIN_PREFIX=/opt/llvm-mingw
+ENV TOOLCHAIN_PREFIX=/opt/arkari-mingw
 
-ARG TOOLCHAIN_ARCHS="i686 x86_64 armv7 aarch64 arm64ec"
+ARG TOOLCHAIN_ARCHS="i686 x86_64"
 
-ARG DEFAULT_CRT=ucrt
+ARG DEFAULT_CRT=msvcrt
 
-ARG CFGUARD_ARGS=--enable-cfguard
+ARG CFGUARD_ARGS=""
 
 # Build everything that uses the llvm monorepo. We need to build the mingw runtime before the compiler-rt/libunwind/libcxxabi/libcxx runtimes.
 COPY build-llvm.sh build-lldb-mi.sh strip-llvm.sh install-wrappers.sh build-mingw-w64.sh build-mingw-w64-tools.sh build-compiler-rt.sh build-libcxx.sh build-mingw-w64-libraries.sh build-openmp.sh ./
