@@ -16,8 +16,8 @@
 
 set -e
 
-: ${LLVM_REPOSITORY:=https://github.com/llvm/llvm-project.git}
-: ${LLVM_VERSION:=llvmorg-22.1.0}
+: ${LLVM_REPOSITORY:=https://github.com/jbx81-1337/Arkari.git}
+: ${LLVM_VERSION:=llvm-22.x}
 ASSERTS=OFF
 unset HOST
 BUILDDIR="build"
